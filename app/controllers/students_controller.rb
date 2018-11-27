@@ -19,10 +19,3 @@ class StudentsController < ApplicationController
       @student = Student.find(params[:id])
     end
 end
-
-
-# <!-- <% if @student.active %>
-# <p><%= This student is currently active. %></p>
-# <% else %>
-# <p><%= This student is currently inactive. %></p>
-# <% end %> -->
