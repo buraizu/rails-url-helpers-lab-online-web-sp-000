@@ -1,12 +1,7 @@
 <div>
   <% @students.each do |student| %>
-
     <div><%= link_to student.to_s, student_path(student.id) %></div>
-    <!-- <div><%= student.first_name + " " + student.last_name %></div> -->
   <% end %>
 </div>
 
 
-<!-- 4) linking from the index page to the show page index page links to post page
-   Failure/Error: expect(page).to have_link(@student.to_s, href: student_path(@student))
-     expected to find visible link "Daenerys Targaryen" but there were no matches -->
