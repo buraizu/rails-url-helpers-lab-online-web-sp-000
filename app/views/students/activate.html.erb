@@ -1,6 +1,7 @@
 <h1>Hello</h1>
 
 <% if !@student.active %>
+  <% binding.pry %>
   <div><%= link_to @student.to_s, student_activate_path(@student) %></div>                                 <!-- Max refactor -->
   <!-- <div><%= link_to post.title, post_path(post.id) %></div>  -->                    <!-- Multiple Helpers -->
   <!-- <div><%= link_to post.title, "/posts/#{post.id}" %></div> -->                    <!-- Refactored to use Helper -->
