@@ -1,5 +1,19 @@
 <div>
   <% @students.each do |student| %>
-    <div><%= student.first_name + " " + student.last_name %></div>
+    
+    <div><%= link_to student.to_s, student_path(student.id) %></div>
+    <!-- <div><%= student.first_name + " " + student.last_name %></div> -->
   <% end %>
 </div>
+
+
+4) linking from the index page to the show page index page links to post page
+   Failure/Error: expect(page).to have_link(@student.to_s, href: student_path(@student))
+     expected to find visible link "Daenerys Targaryen" but there were no matches
+
+     <% if !@student.active %>
+       <div><%= link_to post.title, post_path(post) %></div>                                 <!-- Max refactor -->
+       <!-- <div><%= link_to post.title, post_path(post.id) %></div>  -->                    <!-- Multiple Helpers -->
+       <!-- <div><%= link_to post.title, "/posts/#{post.id}" %></div> -->                    <!-- Refactored to use Helper -->
+       <!-- <div><a href='<%= "/posts/#{post.id}" %>'><%= post.title %></a></div> -->        <!-- Longer style -->
+     <% end %>
